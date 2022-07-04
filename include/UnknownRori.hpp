@@ -8,6 +8,11 @@
  * @copyright Copyright (c) 2022
  *
  */
+
+//? Some header has it's own configuration but the most important is macro
+//! #define UNKNOWNRORI_DEBUG_MODE
+//? this macro will enable overloading some of c++ operator keyword and do other hacky stuff
+
 #pragma once
 
 #ifndef UNKNOWNRORI_HPP
