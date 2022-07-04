@@ -59,10 +59,10 @@ namespace rori
             return pointer;
         }
 
-        // Overload the array operator
-        T operator[](size_t index)
+        // Get the top value
+        T getTop()
         {
-            return data[index];
+            return data[pointer];
         }
 
     private:

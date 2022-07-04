@@ -26,9 +26,6 @@ int main()
     myStack.push(2);
     myStack.push(1);
     myStack.pop();
-    for (size_t i = 0; i < myStack.end(); i++)
-    {
-        std::cout << myStack[i] << std::endl;
-    }
+    std::cout << myStack.getTop() << std::endl;
     return 0;
 }
