@@ -14,6 +14,8 @@
 #ifndef UNKNOWNRORI_NEW_HPP
 #define UNKNOWNRORI_NEW_HPP
 
+#ifdef UNKNOWNRORI_DEBUG_MODE
+
 #include <iostream>
 
 static size_t __ALLOCATED_TIME = 0;
@@ -33,5 +35,7 @@ void *operator new[](size_t size)
               << "\n";
     return malloc(size);
 }
+
+#endif
 
 #endif

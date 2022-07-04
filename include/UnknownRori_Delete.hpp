@@ -14,6 +14,8 @@
 #ifndef UNKNOWNRORI_DELETE_HPP
 #define UNKNOWNRORI_DELETE_HPP
 
+#ifdef UNKNOWNRORI_DEBUG_MODE
+
 #include <iostream>
 
 static size_t __DEALLOCATED_TIME = 0;
@@ -33,5 +35,7 @@ void operator delete[](void *ptr)
               << "\n";
     free(ptr);
 }
+
+#endif
 
 #endif
