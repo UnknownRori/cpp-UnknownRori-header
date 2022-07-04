@@ -11,8 +11,24 @@
 
 #include <iostream>
 #include "./include/UnknownRori.hpp"
+#include "./include/UnknownRori_Stack.hpp"
 
 int main()
 {
+    rori::Stack<i32> myStack;
+    myStack.push(1);
+    myStack.push(2);
+    myStack.push(1);
+    myStack.push(4);
+    myStack.push(2);
+    myStack.push(1);
+    myStack.push(4);
+    myStack.push(2);
+    myStack.push(1);
+    myStack.pop();
+    for (size_t i = 0; i < myStack.end(); i++)
+    {
+        std::cout << myStack[i] << std::endl;
+    }
     return 0;
 }
