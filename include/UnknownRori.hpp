@@ -13,8 +13,6 @@
 #ifndef UNKNOWNRORI_H
 #define UNKNOWNRORI_H
 
-#include <stdint.h>
-
 /*---------------*\
 |      Macro      |
 /*---------------*/
@@ -25,22 +23,24 @@
 |  Custom Primitive Types  |
 /*------------------------*/
 
-#define i8 int8_t
-#define i16 int16_t
-#define i32 int32_t
-#define i64 int64_t
-#define i128 __int128_t
+#include <cstdint>
 
-#define u8 uint8_t
-#define u16 uint16_t
-#define u32 uint32_t
-#define u64 uint64_t
-#define u128 __uint128_t
+typedef int8_t i8;
+typedef int16_t i16;
+typedef int32_t i32;
+typedef int64_t i64;
+typedef __int128_t i128;
 
-#define f32 float
+typedef uint8_t u8;
+typedef uint16_t u16;
+typedef uint32_t u32;
+typedef uint64_t u64;
+typedef __uint128_t u128;
 
-#define d32 double
-#define d64 long double
+typedef float f32;
+
+typedef double d32;
+typedef long double d64;
 
 /*---------------*\
 |   Custom Cast   |
