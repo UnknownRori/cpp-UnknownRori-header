@@ -10,8 +10,8 @@
  */
 #pragma once
 
-#ifndef UNKNOWNRORI_H
-#define UNKNOWNRORI_H
+#ifndef UNKNOWNRORI_HPP
+#define UNKNOWNRORI_HPP
 
 #include "UnknownRori_Macro.hpp"
 #include "UnknownRori_Types.hpp"
