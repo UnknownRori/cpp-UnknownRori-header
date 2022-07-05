@@ -18,14 +18,11 @@ int main()
     rori::Stack<i32> myStack;
     myStack.push(1);
     myStack.push(2);
-    myStack.push(1);
+    myStack.push(3);
     myStack.push(4);
-    myStack.push(2);
-    myStack.push(1);
-    myStack.push(4);
-    myStack.push(2);
-    myStack.push(1);
-    myStack.pop();
-    std::cout << myStack.getTop() << std::endl;
+    myStack.push(5);
+    myStack.push(6);
+    myStack.push(7);
+    std::cout << myStack.size() << std::endl;
     return 0;
 }

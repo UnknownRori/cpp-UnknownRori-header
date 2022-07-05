@@ -26,7 +26,7 @@ namespace rori
             stackSize = 2;
         }
 
-        ~Stack()
+        virtual ~Stack()
         {
             delete[] data;
         }
@@ -46,30 +46,27 @@ namespace rori
         // Pop the current pointer value
         T pop()
         {
-            if (pointer <= 0)
-                return -1;
-
             pointer--;
             return data[pointer];
         }
 
-        // Return the current pointer
-        size_t end()
+        // Return the stack size
+        size_t size()
         {
             return pointer;
         }
 
         // Get the top value
-        T getTop()
+        T top()
         {
-            return data[pointer];
+            return data[pointer - 1];
         }
 
     private:
         // Dynamically allocate memory
         void alloc(size_t newSize)
         {
-            T *newData = new int[newSize];
+            T *newData = new T[newSize];
 
             for (size_t i = 0; i < stackSize; i++)
             {
