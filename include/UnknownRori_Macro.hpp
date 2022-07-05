@@ -15,6 +15,6 @@
 #define UNKNOWNRORI_MACRO_HPP
 
 // Check the size of passed array
-#define size(array) (sizeof((array)) / sizeof((array)[0]))
+#define __SIZE(array) (sizeof((array)) / sizeof((array)[0]))
 
 #endif
