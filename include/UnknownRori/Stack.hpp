@@ -41,7 +41,7 @@ namespace Rori
          *
          * @param value
          */
-        void push(const T value)
+        void push(const T &value)
         {
             if (m_pointer >= m_stackSize)
             {
@@ -50,6 +50,18 @@ namespace Rori
 
             m_data[m_pointer] = value;
             m_pointer++;
+        }
+
+        /**
+         * @brief Add a new element at the top of the stack using newly created element using passed args for it's constructor
+         *
+         * @tparam Args
+         * @param args
+         */
+        template <class... Args>
+        void emplace(Args &&...args)
+        {
+            this->push(T(args...));
         }
 
         /**
@@ -108,9 +120,9 @@ namespace Rori
         bool isEmpty()
         {
             if (m_pointer > 0)
-                return true;
+                return false;
 
-            return false;
+            return true;
         }
 
         /**
@@ -136,12 +148,9 @@ namespace Rori
          */
         void empty()
         {
-            while (true)
+            while (!this->isEmpty())
             {
-                if (this->isEmpty())
-                    this->pop();
-                else
-                    break;
+                this->pop();
             }
         }
 
@@ -169,9 +178,9 @@ namespace Rori
             m_data = newData;
         }
 
-        T *m_data = nullptr;
-        size_t m_pointer = 0;
-        size_t m_stackSize = 0;
+        T *m_data = nullptr;    // Main container for storing data in the heap
+        size_t m_pointer = 0;   // Main Pointer that always point at the top of the stack (empty slot after the top)
+        size_t m_stackSize = 0; // Variable that store the current current heap allocation
     };
 }
 
