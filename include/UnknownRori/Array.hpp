@@ -139,6 +139,28 @@ namespace Rori
         using Iterator = ArrayIterator<Array<T, S>>;
 
         /**
+         * @brief Construct a new Array object using std::initialzier_list
+         *
+         * @param list
+         */
+        Array(std::initializer_list<ValueType> list)
+        {
+#ifdef UNKNOWNRORI_DEBUG_MODE
+            if (list.size() > S)
+            {
+                std::cout << "Failed to initialize array, too large!" << std::endl;
+                exit(1);
+            }
+#endif
+            int i = 0;
+            for (ValueType value : list)
+            {
+                m_data[i] = value;
+                i++;
+            }
+        }
+
+        /**
          * @brief Get the array size
          *
          * @return size_t
@@ -174,7 +196,7 @@ namespace Rori
          * @param index
          * @return T&
          */
-        ValueType &operator[](int index)
+        T &operator[](int index)
         {
 #ifdef UNKNOWNRORI_DEBUG_MODE
             if (S <= index)
@@ -192,7 +214,7 @@ namespace Rori
          * @param index
          * @return const T&
          */
-        const ValueType &operator[](int index) const
+        const T &operator[](int index) const
         {
 #ifdef UNKNOWNRORI_DEBUG_MODE
             if (S <= index)
