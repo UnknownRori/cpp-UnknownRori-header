@@ -14,7 +14,7 @@
 #ifndef UNKNOWNRORI_CAST_HPP
 #define UNKNOWNRORI_CAST_HPP
 
-namespace rori
+namespace Rori
 {
     /**
      * @brief Primitive data casting

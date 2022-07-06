@@ -14,7 +14,7 @@
 #ifndef UNKNOWNRORI_STACK_HPP
 #define UNKNOWNRORI_STACK_HPP
 
-namespace rori
+namespace Rori
 {
     /**
      * @brief Stack based allocation
@@ -22,21 +22,25 @@ namespace rori
      * @tparam T
      */
     template <typename T>
-    class stack
+    class Stack
     {
     public:
-        stack()
+        Stack()
         {
             m_data = new T[2];
             m_stackSize = 2;
         }
 
-        virtual ~stack()
+        virtual ~Stack()
         {
             delete[] m_data;
         }
 
-        // Push the value into stack
+        /**
+         * @brief Push the value into stack
+         *
+         * @param value
+         */
         void push(const T value)
         {
             if (m_pointer >= m_stackSize)
@@ -48,7 +52,11 @@ namespace rori
             m_pointer++;
         }
 
-        // Pop the current pointer value
+        /**
+         * @brief Pop the current pointer value
+         *
+         * @return T
+         */
         T pop()
         {
 
@@ -68,20 +76,35 @@ namespace rori
             return m_data[m_pointer];
         }
 
-        // Return the stack size
+        /**
+         * @brief Return the stack size
+         *
+         * @return const size_t
+         */
         const size_t size() const
         {
             return m_pointer;
         }
 
-        // This is used for debugging purpose
-        // return the current stack size allocation slot
+#ifdef UNKNOWNRORI_DEBUG_MODE
+        /**
+         * @brief This is used for debugging purpose
+         * return the current stack size allocation slot
+         *
+         * @return const size_t
+         */
         const size_t getStackSize() const
         {
             return m_stackSize;
         }
+#endif
 
-        // Check if the stack is empty
+        /**
+         * @brief Check if the stack is empty
+         *
+         * @return true
+         * @return false
+         */
         bool isEmpty()
         {
             if (m_pointer > 0)
@@ -90,7 +113,11 @@ namespace rori
             return false;
         }
 
-        // Get the top value
+        /**
+         * @brief Get the top value
+         *
+         * @return T
+         */
         T top()
         {
 #ifdef UNKNOWNRORI_DEBUG_MODE
@@ -103,7 +130,10 @@ namespace rori
             return m_data[m_pointer - 1];
         }
 
-        // Empty the stack
+        /**
+         * @brief Empty the stack
+         *
+         */
         void empty()
         {
             while (true)
@@ -116,7 +146,11 @@ namespace rori
         }
 
     private:
-        // Dynamically allocate memory
+        /**
+         * @brief Dynamically allocate memory for the stack
+         *
+         * @param newSize
+         */
         void alloc(size_t newSize)
         {
             T *newData = new T[newSize];
