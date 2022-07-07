@@ -155,9 +155,9 @@ namespace Rori
             }
 #endif
             int i = 0;
-            for (ValueType value : list)
+            for (const ValueType &value : list)
             {
-                m_data[i] = value;
+                m_data[i] = std::move(value);
                 i++;
             }
         }
