@@ -9,6 +9,8 @@
  *
  */
 
+#define UNKNOWNRORI_DEBUG_MODE
+
 #include <iostream>
 #include "./include/UnknownRori/UnknownRori.hpp"
 
