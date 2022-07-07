@@ -138,6 +138,8 @@ namespace Rori
         using ValueType = T;
         using Iterator = ArrayIterator<Array<T, S>>;
 
+        Array() {}
+
         /**
          * @brief Construct a new Array object using std::initialzier_list
          *
