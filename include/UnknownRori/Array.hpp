@@ -16,115 +16,6 @@
 
 namespace Rori
 {
-    template <typename Array>
-    class ArrayIterator
-    {
-    public:
-        using ValueType = typename Array::ValueType;
-        using PointerType = ValueType *;
-        using ReferenceType = ValueType &;
-
-        /**
-         * @brief Construct a new Array Iterator object
-         *
-         * @param ptr
-         */
-        ArrayIterator(PointerType ptr)
-        {
-            m_ptr = ptr;
-        }
-
-        /**
-         * @brief do some hacky pointer stuff
-         *
-         * @return ArrayIterator&
-         */
-        ArrayIterator &operator++()
-        {
-            m_ptr++;
-            return *this;
-        }
-
-        /**
-         * @brief do some hacky pointer stuff
-         *
-         * @return ArrayIterator
-         */
-        ArrayIterator operator++(int)
-        {
-            ArrayIterator iterator = *this;
-            ++(*this);
-            return iterator;
-        }
-
-        /**
-         * @brief do some hacky pointer stuff
-         *
-         * @return ArrayIterator&
-         */
-        ArrayIterator &operator--()
-        {
-            m_ptr--;
-            return *this;
-        }
-
-        /**
-         * @brief do some hacky pointer stuff
-         *
-         * @return ArrayIterator
-         */
-        ArrayIterator operator--(int)
-        {
-            ArrayIterator iterator = *this;
-            --(*this);
-            return iterator;
-        }
-
-        /**
-         * @brief do some hacky stuff to allow access using array index
-         *
-         * @param index
-         * @return ReferenceType
-         */
-        ReferenceType operator[](size_t index)
-        {
-            return *(m_ptr + index);
-        }
-
-        /**
-         * @brief To allow use arrow keyword on the iterator
-         *
-         * @return PointerType
-         */
-        PointerType operator->()
-        {
-            return m_ptr;
-        }
-
-        /**
-         * @brief To allow use arrow keyword on the iterator
-         *
-         * @return ReferenceType
-         */
-        ReferenceType operator*()
-        {
-            return *m_ptr;
-        }
-
-        bool operator==(const ArrayIterator &other) const
-        {
-            return m_ptr == other.m_ptr;
-        }
-
-        bool operator!=(const ArrayIterator &other) const
-        {
-            return !(*this == other);
-        }
-
-    private:
-        PointerType m_ptr = nullptr;
-    };
-
     /**
      * @brief Static array allocation, this is nearly identical with the standard library
      *
@@ -135,10 +26,14 @@ namespace Rori
     class Array
     {
     public:
+#ifdef UNKNOWNRORI_ITERATOR_HPP
         using ValueType = T;
         using Iterator = ArrayIterator<Array<T, S>>;
+#endif
 
-        Array() {}
+        Array()
+        {
+        }
 
         /**
          * @brief Construct a new Array object using std::initialzier_list
@@ -172,6 +67,7 @@ namespace Rori
             return S;
         }
 
+#ifdef UNKNOWNRORI_ITERATOR_HPP
         /**
          * @brief Return an begin Array Iterator
          *
@@ -191,6 +87,7 @@ namespace Rori
         {
             return Iterator(m_data + S);
         }
+#endif
 
         /**
          * @brief do some hacky stuff to allow access using array index
