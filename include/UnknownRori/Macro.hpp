@@ -17,7 +17,7 @@
 // Check the size of passed array
 #define __SIZE(array) (sizeof((array)) / sizeof((array)[0]))
 
-// Get the current filename in relative with project root
+// Get the current filename
 #define __FILENAME__ (strrchr(__FILE__, '/') ? strrchr(__FILE__, '/') + 1 : __FILE__)
 
 // Logging
