@@ -17,4 +17,11 @@
 // Check the size of passed array
 #define __SIZE(array) (sizeof((array)) / sizeof((array)[0]))
 
+// Get the current filename in relative with project root
+#define __FILENAME__ (strrchr(__FILE__, '/') ? strrchr(__FILE__, '/') + 1 : __FILE__)
+
+// Logging
+#define __LOG(message) \
+    std::cout << "[" << __LINE__ << "] " << __FILENAME__ << " : " << message << std::endl
+
 #endif
