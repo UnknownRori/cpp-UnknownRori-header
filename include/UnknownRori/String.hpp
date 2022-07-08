@@ -42,9 +42,7 @@ namespace Rori
         {
             m_size = strlen(string_literal);
             m_data = new char[m_size];
-            // m_data = std::move(string_literal);
             strcpy(m_data, string_literal);
-            std::cout << m_data << std::endl;
         }
 
         void operator=(const char string_literal[])
@@ -55,7 +53,6 @@ namespace Rori
             m_size = strlen(string_literal);
             m_data = new char[m_size];
             strcpy(m_data, string_literal);
-            std::cout << m_data << std::endl;
         }
 
         /**
