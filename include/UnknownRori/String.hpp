@@ -94,6 +94,19 @@ namespace Rori
             return m_data[index];
         }
 
+        /**
+         * @brief This will allow to print string in std::cout
+         *
+         * @param os
+         * @param string
+         * @return std::ostream&
+         */
+        friend std::ostream &operator<<(std::ostream &os, const String &string)
+        {
+            os << string.m_data;
+            return os;
+        }
+
     private:
         char *m_data = nullptr;
         size_t m_size = -1;
