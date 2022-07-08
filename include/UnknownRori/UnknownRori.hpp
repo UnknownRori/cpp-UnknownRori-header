@@ -53,6 +53,9 @@ SOFTWARE.
 // Some helper function
 #include "Cast.hpp"
 
+// Some helper enum
+#include "Color.hpp"
+
 // Overloading default operator
 #include "New.hpp"
 #include "Delete.hpp"
