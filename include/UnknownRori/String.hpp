@@ -45,6 +45,11 @@ namespace Rori
             strcpy(m_data, string_literal);
         }
 
+        virtual ~String()
+        {
+            delete m_data;
+        }
+
         void operator=(const char string_literal[])
         {
             if (m_size >= 0)
