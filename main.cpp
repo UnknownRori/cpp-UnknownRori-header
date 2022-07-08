@@ -16,6 +16,11 @@
 
 int main()
 {
-    //
+    Rori::Vector<i32> myVec = {1, 2, 3, 4};
+    for (size_t i = 0; i < 4; i++)
+    {
+        std::cout << myVec[i] << std::endl;
+    }
+
     return 0;
 }
