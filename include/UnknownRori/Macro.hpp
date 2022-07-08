@@ -21,7 +21,9 @@
 #define __FILENAME__ (strrchr(__FILE__, '/') ? strrchr(__FILE__, '/') + 1 : __FILE__)
 
 // Logging
-#define __LOG(message) \
-    std::cout << "[" << __LINE__ << "] " << __FILENAME__ << " : " << message << std::endl
+#define __LOG(message)      \
+    std::cout << "\e[31m"   \
+              << "[debug] " \
+              << "[" << __LINE__ << "] | " << __FILENAME__ << " : " << message << "\e[0m" << std::endl
 
 #endif
