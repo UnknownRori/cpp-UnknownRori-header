@@ -58,6 +58,7 @@ SOFTWARE.
 #include "Delete.hpp"
 
 // Reimplementing C++ Standard Library
+#include "Iterator.hpp"
 #include "Array.hpp"
 #include "Stack.hpp"
 #include "String.hpp"
