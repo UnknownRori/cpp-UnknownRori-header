@@ -36,31 +36,30 @@ SOFTWARE.
 
 */
 
-//? Some header has it's own configuration but the most important is macro
-//! #define UNKNOWNRORI_DEBUG_MODE
-//? this macro will enable overloading some of c++ operator keyword and do other hacky stuff
-
 #pragma once
 
 #ifndef UNKNOWNRORI_HPP
 #define UNKNOWNRORI_HPP
 
-// Some macro, types and custom exception
+//? Some configuration enviroment macro
+// #define UNKNOWNRORI_DEBUG_MODE
+
+//? Some macro, types and custom exception
 #include "Macro.hpp"
 #include "Types.hpp"
 #include "Exception.hpp"
 
-// Some helper function
+//? Some helper function
 #include "Cast.hpp"
 
-// Some helper enum
+//? Some helper enum
 #include "Color.hpp"
 
-// Overloading default operator
+//? Overloading default operator
 #include "New.hpp"
 #include "Delete.hpp"
 
-// Reimplementing C++ Standard Library
+//? Reimplementing C++ Standard Library
 #include "Iterator.hpp"
 #include "Array.hpp"
 #include "Stack.hpp"
