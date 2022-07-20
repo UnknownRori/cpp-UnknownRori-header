@@ -45,6 +45,7 @@ SOFTWARE.
 // #define UNKNOWNRORI_DEBUG_MODE
 
 #include "./Utility.hpp"
+#include "./Memory.hpp"
 #include "./Exception.hpp"
 #include "./Container.hpp"
 #include "./Algorithm.hpp"
