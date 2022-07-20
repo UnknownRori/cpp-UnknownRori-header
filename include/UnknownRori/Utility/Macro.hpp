@@ -14,8 +14,6 @@
 #ifndef UNKNOWNRORI_MACRO_HPP
 #define UNKNOWNRORI_MACRO_HPP
 
-#include "Log.hpp"
-
 // Check the size of passed array
 #define __SIZE(array) (sizeof((array)) / sizeof((array)[0]))
 

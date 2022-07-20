@@ -44,28 +44,9 @@ SOFTWARE.
 //? Some configuration enviroment macro
 // #define UNKNOWNRORI_DEBUG_MODE
 
-//? Some macro, types and custom exception
-#include "Macro.hpp"
-#include "Types.hpp"
-#include "Exception.hpp"
-
-//? Some helper function
-#include "Cast.hpp"
-
-//? Some helper enum
-#include "Color.hpp"
-
-//? Overloading default operator
-#include "New.hpp"
-#include "Delete.hpp"
-
-//? Reimplementing C++ Standard Library
-#include "Iterator.hpp"
-#include "Array.hpp"
-#include "Stack.hpp"
-#include "String.hpp"
-#include "Vector.hpp"
-#include "List.hpp"
-#include "Queue.hpp"
+#include "./Utility.hpp"
+#include "./Exception.hpp"
+#include "./Container.hpp"
+#include "./Algorithm.hpp"
 
 #endif

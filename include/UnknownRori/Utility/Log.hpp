@@ -14,6 +14,8 @@
 
 #ifdef UNKNOWNRORI_DEBUG_MODE
 
+#include <cstring>
+
 // Get the current filename
 #define __FILENAME__ (strrchr(__FILE__, '/') ? strrchr(__FILE__, '/') + 1 : __FILE__)
 
