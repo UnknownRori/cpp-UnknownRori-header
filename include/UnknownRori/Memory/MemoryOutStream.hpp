@@ -45,7 +45,7 @@ namespace Rori
          *
          * @return T*
          */
-        T *deserialzieHeap()
+        T *deserializeHeap()
         {
             if (m_output == nullptr)
                 this->m_output = new T(*((T *)(this->m_memoryToDeserialize->get())));
