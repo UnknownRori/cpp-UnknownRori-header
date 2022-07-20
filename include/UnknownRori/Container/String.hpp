@@ -13,6 +13,7 @@
 
 #ifndef UNKNOWNRORI_STRING_HPP
 
+#include <ostream>
 #include <cstring>
 
 namespace Rori
