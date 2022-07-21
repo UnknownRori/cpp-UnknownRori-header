@@ -28,11 +28,14 @@ namespace Rori
         char *m_ptr = nullptr;
 
     public:
-        MemoryStream() {}
+        MemoryStream()
+        {
+            this->m_Allocate();
+        }
 
         MemoryStream(char *ptr)
         {
-            this->m_ptr = new char[sizeof(T)];
+            this->m_Allocate();
             memcpy(this->m_ptr, ptr, sizeof(T));
         }
 
@@ -67,6 +70,12 @@ namespace Rori
         ~MemoryStream()
         {
             delete[] this->m_ptr;
+        }
+
+    private:
+        void m_Allocate()
+        {
+            this->m_ptr = new char[sizeof(T)];
         }
     };
 }
