@@ -16,6 +16,6 @@
 
 #include "./Algorithm/List.hpp"
 #include "./Algorithm/Queue.hpp"
-#include "./Algorithm/Queue.hpp"
+#include "./Algorithm/Stack.hpp"
 
 #endif
