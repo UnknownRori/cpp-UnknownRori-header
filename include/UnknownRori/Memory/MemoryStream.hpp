@@ -49,9 +49,19 @@ namespace Rori
             this->m_ptr = ptr;
         }
 
-        const char *get()
+        const char *get() const
         {
             return this->m_ptr;
+        }
+
+        char *get()
+        {
+            return this->m_ptr;
+        }
+
+        void *getVoidPtr()
+        {
+            return (void *)this->m_ptr;
         }
 
         ~MemoryStream()
