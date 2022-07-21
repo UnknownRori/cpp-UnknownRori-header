@@ -46,7 +46,6 @@ SOFTWARE.
 
 #include "./Utility.hpp"
 #include "./Memory.hpp"
-#include "./Exception.hpp"
 #include "./Container.hpp"
 #include "./Algorithm.hpp"
 
