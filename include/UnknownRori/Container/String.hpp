@@ -48,13 +48,13 @@ namespace Rori
 
         virtual ~String()
         {
-            delete m_data;
+            delete[] m_data;
         }
 
         void operator=(const char string_literal[])
         {
             if (m_size >= 0)
-                delete m_data;
+                delete[] m_data;
 
             m_size = strlen(string_literal);
             m_data = new char[m_size];
