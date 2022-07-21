@@ -28,22 +28,35 @@ namespace Rori
         char *m_ptr = nullptr;
 
     public:
-        MemoryStream();
-        MemoryStream(char *ptr) : m_ptr(ptr) {}
+        MemoryStream() {}
+
+        MemoryStream(char *ptr)
+        {
+            this->m_ptr = new char[sizeof(T)];
+            memcpy(this->m_ptr, ptr, sizeof(T));
+        }
+
+        const std::size_t size()
+        {
+            return sizeof(T);
+        }
 
         void set(char *ptr)
         {
+            if (this->m_ptr != nullptr)
+                delete[] this->m_ptr;
+
             this->m_ptr = ptr;
         }
 
-        char *get()
+        const char *get()
         {
             return this->m_ptr;
         }
 
         ~MemoryStream()
         {
-            delete this->m_ptr;
+            delete[] this->m_ptr;
         }
     };
 }

@@ -30,7 +30,6 @@ namespace Rori
         // Only reference stored in here so no housekeeping needed (probably)
         T *m_objectToSerialize = nullptr;
         Rori::MemoryStream<T> *m_memoryStream = nullptr;
-        bool m_notByReference = false;
 
     public:
         /**
@@ -41,45 +40,16 @@ namespace Rori
         MemoryInStream(T *objectToSerialize) : m_objectToSerialize(objectToSerialize) {}
 
         /**
-         * @brief Initialize Rori::MemoryInStream to serialize passed <T> this will create a copy on the heap
-         *
-         * @param objectToSerialize
-         */
-        MemoryInStream(T objectToSerialize)
-        {
-            this->m_objectToSerialize = new T(objectToSerialize);
-            this->m_notByReference = true;
-        }
-
-        /**
-         * @brief Serialize the passed <T> on initialization and serialize it on the heap
-         * and then return a pointer that hold the memory stream
-         *
-         * @return MemoryStream<T>*
-         */
-        MemoryStream<T> *serializeHeap()
-        {
-            if (this->m_memoryStream == nullptr)
-                this->m_memoryStream = new Rori::MemoryStream<T>((char *)this->m_objectToSerialize);
-
-            return this->m_memoryStream;
-        }
-
-        /**
-         * @brief Serialize the passed <T> on initialization and serialize on the stack
+         * @brief Serialize the passed <T> and return a Rori::MemoryStream<T>
          *
          * @return MemoryStream<T>
          */
-        MemoryStream<T> serializeStack()
+        MemoryStream<T> serialize()
         {
             return MemoryStream<T>((char *)this->m_objectToSerialize);
         }
 
-        virtual ~MemoryInStream()
-        {
-            if (this->m_notByReference)
-                delete m_objectToSerialize;
-        }
+        virtual ~MemoryInStream() {}
     };
 }
 

@@ -37,29 +37,16 @@ namespace Rori
          *
          * @param objectToSerialize
          */
-        MemoryOutStream(Rori::MemoryStream<T> *memoryToDeserialize) : m_memoryToDeserialize(memoryToDeserialize) {}
-
-        /**
-         * @brief Deserialize and put the value into heap allocated,
-         * if this method called it will detach from Rori::MemoryStream<T> reference
-         *
-         * @return T*
-         */
-        T *deserializeHeap()
+        MemoryOutStream(Rori::MemoryStream<T> *memoryToDeserialize) : m_memoryToDeserialize(memoryToDeserialize)
         {
-            if (m_output == nullptr)
-                this->m_output = new T(*((T *)(this->m_memoryToDeserialize->get())));
-
-            return this->m_output;
         }
 
         /**
-         * @brief Deserialize and put the value into stack allocated,
-         * the value will reflect on reference in Rori::MemoryStream<T>
+         * @brief Deserialize and return the <T> value
          *
          * @return T
          */
-        T deserializeStack()
+        T deserialize()
         {
             return *(T *)(this->m_memoryToDeserialize->get());
         }
