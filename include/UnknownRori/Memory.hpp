@@ -14,6 +14,7 @@
 #ifndef UNKNOWNRORI_MEMORY_HPP
 #define UNKNOWNRORI_MEMORY_HPP
 
+#include "./Memory/SharedPointer.hpp"
 #include "./Memory/MemoryStream.hpp"
 #include "./Memory/MemoryInStream.hpp"
 #include "./Memory/MemoryOutStream.hpp"
