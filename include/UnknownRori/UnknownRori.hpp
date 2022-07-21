@@ -48,5 +48,6 @@ SOFTWARE.
 #include "./Memory.hpp"
 #include "./Container.hpp"
 #include "./Algorithm.hpp"
+#include "./File.hpp"
 
 #endif
