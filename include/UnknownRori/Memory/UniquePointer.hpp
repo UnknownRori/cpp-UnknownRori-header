@@ -59,6 +59,16 @@ namespace Rori
         {
             return this->m_ptr;
         }
+
+        const T &operator[](const size_t &index) const
+        {
+            return this->m_ptr[index];
+        }
+
+        T &operator[](const size_t &index)
+        {
+            return this->m_ptr[index];
+        }
     };
 }
 
