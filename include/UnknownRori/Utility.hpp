@@ -16,5 +16,6 @@
 #include "./Utility/Cast.hpp"
 #include "./Utility/Color.hpp"
 #include "./Utility/Log.hpp"
+#include "./Utility/Result.hpp"
 
 #endif

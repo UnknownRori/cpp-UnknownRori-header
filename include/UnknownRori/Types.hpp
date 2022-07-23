@@ -15,5 +15,6 @@
 #define UNKNOWNRORI_TYPES_HPP
 
 #include "./Types/Primitive.hpp"
+#include "./Types/Error.hpp"
 
 #endif
