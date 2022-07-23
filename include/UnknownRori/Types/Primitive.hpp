@@ -11,8 +11,8 @@
 
 #pragma once
 
-#ifndef UNKNOWNRORI_TYPES_HPP
-#define UNKNOWNRORI_TYPES_HPP
+#ifndef UNKNOWNRORI_TYPES_PRIMITIVES_HPP
+#define UNKNOWNRORI_TYPES_PRIMITIVES_HPP
 
 #include <cstdint>
 

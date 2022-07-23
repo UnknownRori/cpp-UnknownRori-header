@@ -14,7 +14,6 @@
 
 #include "./Utility/Macro.hpp"
 #include "./Utility/Cast.hpp"
-#include "./Utility/Types.hpp"
 #include "./Utility/Color.hpp"
 #include "./Utility/Log.hpp"
 
