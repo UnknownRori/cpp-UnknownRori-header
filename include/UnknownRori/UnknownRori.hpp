@@ -44,6 +44,7 @@ SOFTWARE.
 //? Some configuration enviroment macro
 // #define UNKNOWNRORI_DEBUG_MODE
 
+#include "./Types.hpp"
 #include "./Utility.hpp"
 #include "./Memory.hpp"
 #include "./Container.hpp"
