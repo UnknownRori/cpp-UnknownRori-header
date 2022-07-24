@@ -41,8 +41,7 @@ namespace Rori
          */
         String(const char string_literal[])
         {
-            m_size = strlen(string_literal);
-            m_data = new char[m_size];
+            this->Alloc(strlen(string_literal));
             strcpy(m_data, string_literal);
         }
 
@@ -53,11 +52,9 @@ namespace Rori
 
         void operator=(const char string_literal[])
         {
-            if (m_size <= strlen(string_literal))
+            if (m_size < strlen(string_literal) || this->m_data == nullptr)
             {
-                delete[] m_data;
-                m_size = strlen(string_literal);
-                m_data = new char[m_size];
+                this->Alloc(strlen(string_literal));
             }
 
             strcpy(m_data, string_literal);
@@ -113,6 +110,13 @@ namespace Rori
         }
 
     private:
+        void Alloc(size_t size)
+        {
+            delete[] m_data;
+            m_size = size;
+            this->m_data = new char[size];
+        }
+
         char *m_data = nullptr;
         size_t m_size = -1;
     };
