@@ -53,11 +53,13 @@ namespace Rori
 
         void operator=(const char string_literal[])
         {
-            if (m_size >= 0)
+            if (m_size <= strlen(string_literal))
+            {
                 delete[] m_data;
+                m_size = strlen(string_literal);
+                m_data = new char[m_size];
+            }
 
-            m_size = strlen(string_literal);
-            m_data = new char[m_size];
             strcpy(m_data, string_literal);
         }
 
