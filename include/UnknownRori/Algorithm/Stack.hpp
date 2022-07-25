@@ -27,13 +27,13 @@ namespace Rori
     public:
         Stack()
         {
-            m_data = new T[2];
-            m_stackSize = 2;
+            this->m_data = new T[2];
+            this->m_stackSize = 2;
         }
 
         virtual ~Stack()
         {
-            delete[] m_data;
+            delete[] this->m_data;
         }
 
         /**
@@ -43,13 +43,13 @@ namespace Rori
          */
         void push(const T &value)
         {
-            if (m_pointer >= m_stackSize)
+            if (this->m_pointer >= this->m_stackSize)
             {
-                alloc(m_stackSize * 2);
+                this->alloc(this->m_stackSize * 2);
             }
 
-            m_data[m_pointer] = value;
-            m_pointer++;
+            this->m_data[m_pointer] = value;
+            this->m_pointer++;
         }
 
         /**
@@ -79,13 +79,13 @@ namespace Rori
                 exit(1);
             }
 #endif
-            if (m_pointer <= m_stackSize / 2)
+            if (this->m_pointer <= this->m_stackSize / 2)
             {
-                alloc(m_stackSize / 2);
+                this->alloc(this->m_stackSize / 2);
             }
 
-            m_pointer--;
-            return m_data[m_pointer];
+            this->m_pointer--;
+            return this->m_data[this->m_pointer];
         }
 
         /**
@@ -95,7 +95,7 @@ namespace Rori
          */
         const size_t size() const
         {
-            return m_pointer;
+            return this->m_pointer;
         }
 
 #ifdef UNKNOWNRORI_DEBUG_MODE
@@ -107,7 +107,7 @@ namespace Rori
          */
         const size_t getStackSize() const
         {
-            return m_stackSize;
+            return this->m_stackSize;
         }
 #endif
 
@@ -119,7 +119,7 @@ namespace Rori
          */
         bool isEmpty()
         {
-            if (m_pointer > 0)
+            if (this->m_pointer > 0)
                 return false;
 
             return true;
@@ -139,7 +139,7 @@ namespace Rori
                 exit(1);
             }
 #endif
-            return m_data[m_pointer - 1];
+            return this->m_data[this->m_pointer - 1];
         }
 
         /**
@@ -164,18 +164,18 @@ namespace Rori
         {
             T *newData = new T[newSize];
 
-            for (size_t i = 0; i < m_stackSize; i++)
+            for (size_t i = 0; i < this->m_stackSize; i++)
             {
                 if (i >= newSize)
                     break;
 
-                newData[i] = std::move(m_data[i]);
+                newData[i] = std::move(this->m_data[i]);
             }
 
-            m_stackSize = newSize;
+            this->m_stackSize = newSize;
 
-            delete[] m_data;
-            m_data = newData;
+            delete[] this->m_data;
+            this->m_data = newData;
         }
 
         T *m_data = nullptr;    // Main container for storing data in the heap
