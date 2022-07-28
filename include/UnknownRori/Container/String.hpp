@@ -60,6 +60,16 @@ namespace Rori
             strcpy(m_data, string_literal);
         }
 
+        const char *getPtr() const
+        {
+            return this->m_data;
+        }
+
+        char *getPtr()
+        {
+            return this->m_data;
+        }
+
         /**
          * @brief Hacky stuff to allow access using array index
          *
