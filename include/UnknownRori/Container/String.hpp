@@ -29,10 +29,7 @@ namespace Rori
          * @brief Construct a new String object
          *
          */
-        String()
-        {
-            //
-        }
+        String() = default;
 
         /**
          * @brief Construct a new String object
